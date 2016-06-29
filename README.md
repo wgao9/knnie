@@ -1,11 +1,11 @@
 # knnie
 k-Nearest Neighbor Information Estimator
 
-Using kNN method to estimator (multivariate) mutual information from high dimensional samples
-
-Read readme.pdf for more details
+This is a Python package for kNN-based estimator of (multivariate) mutual information from high dimensional samples
 
 Reference: http://arxig.org/abs/1604.03006
 
-Contact wgao9@illinois.edu if you have any questions 
+Read readme.pdf for more details
+
+Contact wgao9@illinois.edu for more information
 
