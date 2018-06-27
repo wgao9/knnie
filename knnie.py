@@ -79,8 +79,8 @@ def revised_mi(x,y,k=5,q=float('inf')):
 	ans_y = log(N) + vd(dy,q)
 	for i in range(N):
 		ans_xy += (dx+dy)*log(knn_dis[i])/N
-		ans_x += -log(len(tree_x.query_ball_point(x[i],knn_dis[i],p=q))-1)/N+dx*log(knn_dis[i])/N
-		ans_y += -log(len(tree_y.query_ball_point(y[i],knn_dis[i],p=q))-1)/N+dy*log(knn_dis[i])/N		
+		ans_x += -log(len(tree_x.query_ball_point(x[i],knn_dis[i]+1e-15,p=q))-1)/N+dx*log(knn_dis[i])/N
+		ans_y += -log(len(tree_y.query_ball_point(y[i],knn_dis[i]+1e-15,p=q))-1)/N+dy*log(knn_dis[i])/N		
 	return ans_x+ans_y-ans_xy
 
 
@@ -162,9 +162,9 @@ def revised_multi_mi(x,y,z,k=5,q=float('inf')):
 	ans_z = log(N) + vd(dz,q)
 	for i in range(N):
 		ans_xyz += (dx+dy+dz)*log(knn_dis[i])/N
-		ans_x += -log(len(tree_x.query_ball_point(x[i],knn_dis[i],p=q))-1)/N+dx*log(knn_dis[i])/N
-		ans_y += -log(len(tree_y.query_ball_point(y[i],knn_dis[i],p=q))-1)/N+dy*log(knn_dis[i])/N		
-		ans_y += -log(len(tree_z.query_ball_point(z[i],knn_dis[i],p=q))-1)/N+dz*log(knn_dis[i])/N		
+		ans_x += -log(len(tree_x.query_ball_point(x[i],knn_dis[i]+1e-15,p=q))-1)/N+dx*log(knn_dis[i])/N
+		ans_y += -log(len(tree_y.query_ball_point(y[i],knn_dis[i]+1e-15,p=q))-1)/N+dy*log(knn_dis[i])/N		
+		ans_z += -log(len(tree_z.query_ball_point(z[i],knn_dis[i]+1e-15,p=q))-1)/N+dz*log(knn_dis[i])/N		
 	return ans_x+ans_y+ans_z-ans_xyz
 
 
